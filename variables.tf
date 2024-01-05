@@ -1,6 +1,6 @@
 variable "network_name" {
     description = "The Name of the network"
-    type = string
+    type = list(string)
 }
 
 variable "auto_create_subnetworks" {

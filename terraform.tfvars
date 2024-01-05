@@ -1,1 +1,1 @@
-network_name = "vpc01"
+network_name = ["vpc01","vpc02"]
