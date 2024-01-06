@@ -11,28 +11,10 @@ Make sure below points exist before proceeding to use this repo:
 - A GCP API's Enabled based on resources used.
 - A GCP Service Account with Owner/Editor Role.
 
-## Examples:
+## Provision:
 
-### Creation of VPC:
-
-- Use of VPC Sub-Module 
-
-`entrypoint.tf` would reference vpc module under modules directory
-
-```hcl
-module "vpc" {
-    source = "./modules/vpc"
-    network_name = var.network_name
-}
-```
-
-- Resource defined in vpc module to create New VPC
-
-`main.tf` would contain the code to create a new VPC
-
-```hcl
-resource "google_compute_network" "network" {
-    name = var.network_name
-    auto_create_subnetworks = var.auto_create_subnetworks
-}
-```
+To provision this example, run the following from within this directory:
+- `terraform init` to get the plugins
+- `terraform plan` to see the speculative infrastructure plan
+- `terraform apply` to apply the infrastructure build
+- `terraform destry` to destroy the built infrastructure
