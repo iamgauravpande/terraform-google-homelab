@@ -6,6 +6,7 @@ module "vpc" {
 module "subnets" {
   source  = "./modules/subnets"
   subnets = var.subnets
+  secondary_ranges = var.secondary_ranges
   depends_on = [
     module.vpc
   ]

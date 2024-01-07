@@ -17,4 +17,26 @@ subnets = {
     private_ip_access = true
     stack_type        = "IPV4_ONLY"
   }
+  "vpc02-subnet03" = {
+    name              = "subnet03"
+    region            = "asia-south2"
+    ip_cidr_range     = "10.10.40.0/29"
+    vpc_network       = "vpc02"
+    private_ip_access = true
+    stack_type        = "IPV4_ONLY"
+  }
+}
+
+secondary_ranges = {
+
+  "subnet03" = [
+    {
+      range_name = "subnet03-secondary01"
+      secondary_ip_cidr_range = "192.168.64.0/29"
+    },
+    {
+      range_name = "subnet03-secondary02"
+      secondary_ip_cidr_range = "192.168.65.0/29"
+    }
+  ]
 }

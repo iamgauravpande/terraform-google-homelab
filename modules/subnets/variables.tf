@@ -8,3 +8,10 @@ variable "subnets" {
         stack_type = string
     }))
 }
+variable "secondary_ranges" {
+    type = map(list(object({
+        range_name = string
+        secondary_ip_cidr_range = string
+    })))
+    default = {}
+}
