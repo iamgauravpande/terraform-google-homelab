@@ -1,1 +1,20 @@
-network_name = ["vpc01","vpc02"]
+network_name = ["vpc01", "vpc02"]
+
+subnets = {
+  "vpc01-subnet01" = {
+    name              = "subnet01"
+    region            = "asia-south2"
+    ip_cidr_range     = "10.10.20.0/29"
+    vpc_network       = "vpc01"
+    private_ip_access = true
+    stack_type        = "IPV4_ONLY"
+  }
+  "vpc02-subnet02" = {
+    name              = "subnet02"
+    region            = "asia-south2"
+    ip_cidr_range     = "10.10.30.0/29"
+    vpc_network       = "vpc02"
+    private_ip_access = true
+    stack_type        = "IPV4_ONLY"
+  }
+}
