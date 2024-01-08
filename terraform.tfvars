@@ -40,3 +40,15 @@ secondary_ranges = {
     }
   ]
 }
+
+buckets = {
+  "gcs-01" = {
+    name = "homelab-gcs-01"
+    location = "asia-south2"    
+  }
+
+  "gcs-02" = {
+    name = "homelab-gcs-02"
+    location = "asia-south1"    
+  }
+}
