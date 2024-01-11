@@ -15,3 +15,8 @@ module "gcs" {
   source  = "./modules/gcs"
   buckets =  var.buckets
 }
+
+module "serviceaccounts" {
+  source = "./modules/serviceaccounts"
+  serviceaccount = var.serviceaccount
+}

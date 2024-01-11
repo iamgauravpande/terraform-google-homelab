@@ -8,3 +8,6 @@ output "subnets" {
 output "bucket" {
   value = module.gcs.bucket
 }
+output "serviceaccount" {
+    value = module.serviceaccounts.serviceaccount
+}

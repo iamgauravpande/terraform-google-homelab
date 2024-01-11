@@ -52,3 +52,13 @@ buckets = {
     location = "asia-south1"    
   }
 }
+
+serviceaccount = {
+  "loki-gcs" = {
+    account_id = "loki-gcs"
+    
+  }
+  "cert-manager-dns01" = {
+    account_id = "cert-manager-dns01"
+  }
+}
