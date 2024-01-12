@@ -11,7 +11,10 @@ module "serviceaccounts" {
 }
 ```
 
-`main.tf` would contain the code to create a new service_account
+`main.tf` would contain below codes: 
+
+
+1. To create a new service_account:
 
 ```hcl
 resource "google_service_account" "service_account" {
@@ -20,6 +23,17 @@ resource "google_service_account" "service_account" {
     display_name = each.value["display_name"]
     description = each.value["description"]
     disabled = each.value["disabled"]
+}
+```
+
+2. To create project iam bindings for created service accounts:
+
+```hcl
+resource "google_project_iam_binding" "bindings" {
+    project = var.project
+    for_each = var.bindings
+    role = each.key
+    members = each.value
 }
 ```
 
@@ -34,5 +48,17 @@ serviceaccount = {
   "cert-manager-dns01" = {
     account_id = "cert-manager-dns01"
   }
+}
+
+project = "bitlost"
+
+bindings = {
+  "roles/storage.admin" = [ 
+    "serviceAccount:loki-gcs@bitlost.iam.gserviceaccount.com"
+  ]
+
+  "roles/dns.admin" = [ 
+    "serviceAccount:cert-manager-dns01@bitlost.iam.gserviceaccount.com" 
+  ]
 }
 ```

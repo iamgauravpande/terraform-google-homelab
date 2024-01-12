@@ -45,3 +45,10 @@ variable "serviceaccount" {
       disabled = optional(bool, false)
     }))
 }
+variable "bindings" {
+  type = map(list(string))
+}
+variable "project" {
+  type = string
+  
+}

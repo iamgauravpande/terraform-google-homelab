@@ -62,3 +62,14 @@ serviceaccount = {
     account_id = "cert-manager-dns01"
   }
 }
+
+project = "bitlost"
+bindings = {
+  "roles/storage.admin" = [ 
+    "serviceAccount:loki-gcs@bitlost.iam.gserviceaccount.com"
+  ]
+
+  "roles/dns.admin" = [ 
+    "serviceAccount:cert-manager-dns01@bitlost.iam.gserviceaccount.com" 
+  ]
+}
