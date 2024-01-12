@@ -8,6 +8,8 @@
 module "serviceaccounts" {
   source = "./modules/serviceaccounts"
   serviceaccount = var.serviceaccount
+  bindings = var.bindings
+  project = var.project
 }
 ```
 
