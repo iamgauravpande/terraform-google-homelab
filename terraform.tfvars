@@ -74,4 +74,4 @@ bindings = {
   ]
 }
 
-serviceaccount_key = [ "loki-gcs" ]
+serviceaccount_key = [  ]
