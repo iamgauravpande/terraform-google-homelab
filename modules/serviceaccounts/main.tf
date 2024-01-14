@@ -11,4 +11,7 @@ resource "google_project_iam_binding" "bindings" {
     for_each = var.bindings
     role = each.key
     members = each.value
+    depends_on = [ 
+        google_service_account.service_account 
+    ]
 }
