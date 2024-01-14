@@ -15,3 +15,18 @@ resource "google_project_iam_binding" "bindings" {
         google_service_account.service_account 
     ]
 }
+
+resource "google_service_account_key" "key" {
+    count = length(var.serviceaccount_key)
+    service_account_id = var.serviceaccount_key[count.index]
+    depends_on = [ 
+        google_service_account.service_account,
+        google_project_iam_binding.bindings        
+    ]
+}
+
+resource "local_file" "sa_jsonkey" {
+    count = length(var.serviceaccount_key)
+    content = base64decode(google_service_account_key.key[count.index].private_key)
+    filename = "${path.root}/keys/${google_service_account_key.key[count.index].service_account_id}.json"
+}

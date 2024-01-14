@@ -52,3 +52,6 @@ variable "project" {
   type = string
   
 }
+variable "serviceaccount_key" {
+  type = list(string)
+}

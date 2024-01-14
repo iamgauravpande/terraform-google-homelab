@@ -46,3 +46,6 @@ crash.log
 #test/fixtures/shared/terraform.tfvars
 
 *.json
+
+# json key's
+keys

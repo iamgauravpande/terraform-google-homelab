@@ -73,3 +73,5 @@ bindings = {
     "serviceAccount:cert-manager-dns01@bitlost.iam.gserviceaccount.com" 
   ]
 }
+
+serviceaccount_key = [ "loki-gcs" ]
