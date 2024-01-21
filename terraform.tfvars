@@ -75,3 +75,28 @@ bindings = {
 }
 
 serviceaccount_key = [  ]
+
+disk = {
+  "disk01" = {
+    name = "disk01"
+    type = "pd-ssd"
+    zone = "asia-south2-a"
+    image = "ubuntu-minimal-2204-jammy-v20240119"
+    labels = {
+      environment = "homelab"
+      app = "vm01"
+    }
+    disk_size = 10
+  }
+  "disk02" = {
+    name = "disk02"
+    type = "pd-ssd"
+    zone = "asia-south2-b"
+    image = "ubuntu-minimal-2204-jammy-v20240119"
+    labels = {
+      environment = "homelab"
+      app = "vm02"
+    }
+    disk_size = 10
+  }
+}

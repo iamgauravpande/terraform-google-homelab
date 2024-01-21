@@ -15,3 +15,7 @@ output "serviceaccount_key" {
     value = [ for i in module.serviceaccounts.serviceaccount_key : i ]
     sensitive = true
 }
+
+output "disk" {
+    value = module.computedisk.disk
+}

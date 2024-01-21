@@ -23,3 +23,7 @@ module "serviceaccounts" {
   project = var.project
   serviceaccount_key = var.serviceaccount_key
 }
+module "computedisk" {
+  source  = "./modules/computedisk"
+  disk = var.disk
+}
