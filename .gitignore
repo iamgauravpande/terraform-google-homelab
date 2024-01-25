@@ -42,7 +42,6 @@ crash.log
 # .tfvars files are managed as part of configuration and so should be included in
 # version control.
 #
-*.tfvars
 #test/fixtures/shared/terraform.tfvars
 
 *.json
