@@ -2,7 +2,7 @@
 
 -  To create one or more Disk using a public gcp Ubuntu based image : 
 
-`entrypoint.tf` would reference vpc module under `modules` directory
+`entrypoint.tf` would reference computedisk module under `modules` directory
 
 ```hcl
 module "computedisk" {
