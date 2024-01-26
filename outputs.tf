@@ -19,3 +19,8 @@ output "serviceaccount_key" {
 output "disk" {
     value = module.computedisk.disk
 }
+
+output "computeinstance" {
+    value = module.computeinstance.computeinstance
+    sensitive = true
+}

@@ -61,6 +61,9 @@ serviceaccount = {
   "cert-manager-dns01" = {
     account_id = "cert-manager-dns01"
   }
+  "compute" = {
+    account_id = "compute"
+  }
 }
 
 project = "bitlost"
@@ -70,7 +73,11 @@ bindings = {
   ]
 
   "roles/dns.admin" = [ 
-    "serviceAccount:cert-manager-dns01@bitlost.iam.gserviceaccount.com" 
+    "serviceAccount:cert-manager-dns01@bitlost.iam.gserviceaccount.com"
+  ]
+
+  "roles/compute.admin" = [ 
+    "serviceAccount:compute@bitlost.iam.gserviceaccount.com" 
   ]
 }
 
@@ -99,4 +106,33 @@ disk = {
     }
     disk_size = 10
   }
+}
+
+computeinstance = {
+  "instance01" = {
+    name = "instance01"
+    machine_type = "e2-micro"
+    zone = "asia-south2-a"
+    subnetwork = "subnet01"
+    boot_disk_source = "disk01"
+    boot_disk_auto_delete = "false"
+    boot_disk_mode = "READ_WRITE"
+    service_account_email = "compute@bitlost.iam.gserviceaccount.com"
+    service_account_scopes = ["cloud-platform"]
+    allow_stopping_for_update = "true"
+  }
+
+  "instance02" = {
+    name = "instance02"
+    machine_type = "e2-micro"
+    zone = "asia-south2-b"
+    subnetwork = "subnet02"
+    boot_disk_source = "disk02"
+    boot_disk_auto_delete = "false"
+    boot_disk_mode = "READ_WRITE"
+    service_account_email = "compute@bitlost.iam.gserviceaccount.com"
+    service_account_scopes = ["cloud-platform"]
+    allow_stopping_for_update = "true"
+  }
+
 }

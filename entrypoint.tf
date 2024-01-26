@@ -27,3 +27,14 @@ module "computedisk" {
   source  = "./modules/computedisk"
   disk = var.disk
 }
+
+module "computeinstance" {
+  source = "./modules/computeinstance"
+  computeinstance = var.computeinstance
+  depends_on = [ 
+    module.vpc,
+    module.subnets,
+    module.computedisk,
+    module.serviceaccounts
+  ]
+}
