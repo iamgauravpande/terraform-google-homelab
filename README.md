@@ -272,3 +272,6 @@ computeinstance = {
   }
 }
 ```
+## How to Individual Sub-modules under this Module:
+
+To use submodule go to [modules] (https://github.com/iamgauravpande/terraform-google-homelab/tree/main/modules) and based on submodule you want to use check its  `README` file.
