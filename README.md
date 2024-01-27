@@ -1,6 +1,6 @@
 # Terraform Google HomeLab
 
-This repo contains  modules to create Infrastructure on GCP using Terraform.
+This module contains terraform code  to create Infrastructure on GCP. Individal submodules can also be used to create specific resoruces.
 
 ## Pre-Requisite 
 
@@ -8,16 +8,22 @@ Make sure below points exist before proceeding to use this repo:
 
 - A GCP Account 
 - A GCP Project under that account 
-- A GCP API's Enabled based on resources used.
+- GCP API's Enabled based on resources used.
 - A GCP Service Account with Owner/Editor Role.
 
-## Provision:
 
-To provision this example, run the following from within this directory:
-- `terraform init` to get the plugins
+## Authenticate to GCP : 
+
+Follow this link [gcp-authenticate] to use one of many methods suggested to authenticate to gcp provider.
+
+
+
+## Provision Commands :
+
+- `terraform init` to get the plugins/modules
 - `terraform plan` to see the speculative infrastructure plan
 - `terraform apply` to apply the infrastructure build
-- `terraform destry` to destroy the built infrastructure
+- `terraform destroy` to destroy the built infrastructure
 
 ## How to Use this Module:
 
@@ -272,9 +278,11 @@ computeinstance = {
   }
 }
 ```
-## How to Individual Sub-modules under this Module:
+
+## Use Individual Sub-modules under this Module:
 
 To use submodule go to [modules] and based on submodule you want to use check its  `README` file.
 
 
+[gcp-authenticate]: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference#authentication
 [modules]: https://github.com/iamgauravpande/terraform-google-homelab/tree/main/modules
