@@ -6,7 +6,7 @@
 
 ```hcl
 module "computedisk" {
-  source  = "./modules/computedisk"
+  source  = "iamgauravpande/homelab/google//modules/computedisk"
   disk = var.disk
 }
 ```

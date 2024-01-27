@@ -6,7 +6,7 @@
 
 ```hcl
 module "computeinstance" {
-  source = "./modules/computeinstance"
+  source = "iamgauravpande/homelab/google//modules/computeinstance"
   computeinstance = var.computeinstance
   depends_on = [ 
     module.vpc,

@@ -6,7 +6,7 @@
 
 ```hcl
 module "serviceaccounts" {
-  source = "./modules/serviceaccounts"
+  source = "iamgauravpande/homelab/google//modules/serviceaccounts"
   serviceaccount = var.serviceaccount
   bindings = var.bindings
   project = var.project

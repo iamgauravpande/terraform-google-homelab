@@ -6,7 +6,7 @@
 
 ```hcl
 module "gcs" {
-  source  = "./modules/gcs"
+  source  = "iamgauravpande/homelab/google//modules/gcs"
   buckets =  var.buckets
 }
 ```

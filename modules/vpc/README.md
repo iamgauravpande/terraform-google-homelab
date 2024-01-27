@@ -6,7 +6,7 @@
 
 ```hcl
 module "vpc" {
-    source = "./modules/vpc"
+    source = "iamgauravpande/homelab/google//modules/vpc"
     network_name = var.network_name
 }
 ```

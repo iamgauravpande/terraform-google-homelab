@@ -6,7 +6,7 @@
 
 ```hcl
 module "subnets" {
-  source  = "./modules/subnets"
+  source  = "iamgauravpande/homelab/google//modules/subnets"
   subnets = var.subnets
   secondary_ranges = var.secondary_ranges
   depends_on = [
