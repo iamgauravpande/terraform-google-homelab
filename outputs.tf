@@ -24,3 +24,10 @@ output "computeinstance" {
     value = module.computeinstance.computeinstance
     sensitive = true
 }
+output "clustername" {
+    value = [ for i in module.gkecluster.clustername : i ]
+}
+
+output "clusterversion" {
+    value = [ for i in module.gkecluster.clusterversion : i ]
+}

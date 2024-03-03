@@ -38,3 +38,12 @@ module "computeinstance" {
     module.serviceaccounts
   ]
 }
+
+module "gkecluster" {
+  source = "./modules/gkecluster"
+  gkecluster = var.gkecluster
+  depends_on = [
+    module.vpc,
+    module.subnets
+  ] 
+}

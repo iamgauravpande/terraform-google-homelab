@@ -42,7 +42,8 @@ module "homelab" {
   serviceaccount_key = var.serviceaccount_key
   disk = var.disk
   computeinstance = var.computeinstance
-  buckets = var.buckets  
+  buckets = var.buckets 
+  gkecluster = var.gkecluster 
 }
 ```
 
@@ -100,7 +101,6 @@ variable "serviceaccount" {
 variable "bindings" {
   type = map(list(string))
 }
-
 variable "project" {
   type = string
   
@@ -133,6 +133,25 @@ variable "computeinstance" {
       service_account_scopes = list(string)
       allow_stopping_for_update = bool
     }))
+}
+variable "gkecluster" {
+    type = map(object({
+      name = string
+      location = string
+      remove_default_node_pool = bool
+      initial_node_count = number
+      deletion_protection = bool
+      networking_mode = string
+      release_channel = string
+      min_master_version = string
+      network = string
+      subnetwork = string
+      cluster_secondary_range_name = string
+      services_secondary_range_name = string
+      stack_type = string 
+      enable_private_nodes = bool
+      master_ipv4_cidr_block    = string
+    })) 
 }
 ```
 
@@ -173,11 +192,11 @@ secondary_ranges = {
   "subnet03" = [
     {
       range_name = "subnet03-secondary01"
-      secondary_ip_cidr_range = "192.168.64.0/29"
+      secondary_ip_cidr_range = "192.168.60.0/24"
     },
     {
       range_name = "subnet03-secondary02"
-      secondary_ip_cidr_range = "192.168.65.0/29"
+      secondary_ip_cidr_range = "192.168.70.0/24"
     }
   ]
 }
@@ -208,7 +227,6 @@ serviceaccount = {
 }
 
 project = "bitlost"
-
 bindings = {
   "roles/storage.admin" = [ 
     "serviceAccount:loki-gcs@bitlost.iam.gserviceaccount.com"
@@ -275,6 +293,28 @@ computeinstance = {
     service_account_email = "compute@bitlost.iam.gserviceaccount.com"
     service_account_scopes = ["cloud-platform"]
     allow_stopping_for_update = "true"
+  }
+
+}
+
+gkecluster = {
+  "cluster01" = {
+    name = "cluster01"
+    location = "asia-south2-a"
+    initial_node_count = 1
+    remove_default_node_pool = true
+    initial_node_count = 1
+    deletion_protection = false
+    networking_mode = "VPC_NATIVE"
+    release_channel = "STABLE"
+    min_master_version = "1.26.10-gke.1101000"
+    network = "vpc02"
+    subnetwork = "subnet03"
+    cluster_secondary_range_name = "subnet03-secondary01"
+    services_secondary_range_name = "subnet03-secondary02"
+    stack_type = "IPV4" 
+    enable_private_nodes = true
+    master_ipv4_cidr_block = "172.16.0.48/28"
   }
 }
 ```

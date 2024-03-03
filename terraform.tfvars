@@ -32,11 +32,11 @@ secondary_ranges = {
   "subnet03" = [
     {
       range_name = "subnet03-secondary01"
-      secondary_ip_cidr_range = "192.168.64.0/29"
+      secondary_ip_cidr_range = "192.168.60.0/24"
     },
     {
       range_name = "subnet03-secondary02"
-      secondary_ip_cidr_range = "192.168.65.0/29"
+      secondary_ip_cidr_range = "192.168.70.0/24"
     }
   ]
 }
@@ -135,4 +135,25 @@ computeinstance = {
     allow_stopping_for_update = "true"
   }
 
+}
+
+gkecluster = {
+  "cluster01" = {
+    name = "cluster01"
+    location = "asia-south2-a"
+    initial_node_count = 1
+    remove_default_node_pool = true
+    initial_node_count = 1
+    deletion_protection = false
+    networking_mode = "VPC_NATIVE"
+    release_channel = "STABLE"
+    min_master_version = "1.26.10-gke.1101000"
+    network = "vpc02"
+    subnetwork = "subnet03"
+    cluster_secondary_range_name = "subnet03-secondary01"
+    services_secondary_range_name = "subnet03-secondary02"
+    stack_type = "IPV4" 
+    enable_private_nodes = true
+    master_ipv4_cidr_block = "172.16.0.48/28"
+  }
 }
