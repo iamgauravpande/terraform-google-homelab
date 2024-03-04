@@ -31,8 +31,7 @@ Create `main.tf` that has below input variable structure:
 
 ```hcl
 module "homelab" {
-  source  = "iamgauravpande/homelab/google"
-  version = "1.1.0"
+  source  = "github.com/iamgauravpande/terraform-google-homelab"
   project = var.project
   network_name = var.network_name
   subnets = var.subnets

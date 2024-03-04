@@ -6,7 +6,7 @@
 
 ```hcl
 module "computeinstance" {
-  source = "iamgauravpande/homelab/google//modules/computeinstance"
+  source = "github.com/iamgauravpande/terraform-google-homelab//modules/computeinstance"
   computeinstance = var.computeinstance
   depends_on = [ 
     module.vpc,

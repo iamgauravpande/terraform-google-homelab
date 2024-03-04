@@ -6,7 +6,7 @@
 
 ```hcl
 module "vpc" {
-    source = "iamgauravpande/homelab/google//modules/vpc"
+    source = "github.com/iamgauravpande/terraform-google-homelab//modules/vpc"
     network_name = var.network_name
 }
 ```
