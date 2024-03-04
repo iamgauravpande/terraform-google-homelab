@@ -6,7 +6,7 @@
 
 ```hcl
 module "subnets" {
-  source  = "iamgauravpande/homelab/google//modules/subnets"
+  source  = "github.com/iamgauravpande/terraform-google-homelab//modules/subnets"
   subnets = var.subnets
   secondary_ranges = var.secondary_ranges
   depends_on = [

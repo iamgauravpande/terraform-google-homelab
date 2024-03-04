@@ -6,7 +6,7 @@
 
 ```hcl
 module "gkecluster" {
-  source = "iamgauravpande/homelab/google//modules/gkecluster"
+  source = "github.com/iamgauravpande/terraform-google-homelab//modules/gkecluster"
   gkecluster = var.gkecluster
   depends_on = [
     module.vpc,

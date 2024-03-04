@@ -6,7 +6,7 @@
 
 ```hcl
 module "serviceaccounts" {
-  source = "iamgauravpande/homelab/google//modules/serviceaccounts"
+  source = "github.com/iamgauravpande/terraform-google-homelab//modules/serviceaccounts"
   serviceaccount = var.serviceaccount
   bindings = var.bindings
   project = var.project

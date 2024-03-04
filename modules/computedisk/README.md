@@ -6,7 +6,7 @@
 
 ```hcl
 module "computedisk" {
-  source  = "iamgauravpande/homelab/google//modules/computedisk"
+  source  = "github.com/iamgauravpande/terraform-google-homelab//modules/computedisk"
   disk = var.disk
 }
 ```

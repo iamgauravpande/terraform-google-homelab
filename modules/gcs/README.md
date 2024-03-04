@@ -6,7 +6,7 @@
 
 ```hcl
 module "gcs" {
-  source  = "iamgauravpande/homelab/google//modules/gcs"
+  source  = "github.com/iamgauravpande/terraform-google-homelab//modules/gcs"
   buckets =  var.buckets
 }
 ```
