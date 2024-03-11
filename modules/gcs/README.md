@@ -2,7 +2,7 @@
 
 -  To create one or more bucket : 
 
-`entrypoint.tf` would reference vpc module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "gcs" {
@@ -11,7 +11,7 @@ module "gcs" {
 }
 ```
 
-`main.tf` would contain the code to create a bucket resource:
+`main.tf` example:
 
 ```hcl
 resource "google_storage_bucket" "bucket" {

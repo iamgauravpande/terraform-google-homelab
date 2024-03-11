@@ -2,7 +2,7 @@
 
 -  To create one or more VPC : 
 
-`entrypoint.tf` would reference vpc module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "vpc" {
@@ -11,7 +11,7 @@ module "vpc" {
 }
 ```
 
-`main.tf` would contain the code to create a new VPC
+`main.tf` example:
 
 ```hcl
 resource "google_compute_network" "network" {

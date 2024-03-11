@@ -2,7 +2,7 @@
 
 -  To create one or more ServiceAccount : 
 
-`entrypoint.tf` would reference serviceaccounts module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "serviceaccounts" {
@@ -13,8 +13,7 @@ module "serviceaccounts" {
 }
 ```
 
-`main.tf` would contain below codes: 
-
+`main.tf` example:
 
 1. To create a new service_account:
 

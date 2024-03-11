@@ -2,7 +2,7 @@
 
 -  To create one or more GKE Control Plane : 
 
-`entrypoint.tf` would reference computeinstance module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "gkecluster" {
@@ -15,7 +15,7 @@ module "gkecluster" {
 }
 ```
 
-`main.tf` would contain the code to create a GKE Control Plane:
+`main.tf` example:
 
 ```hcl
 resource "google_container_cluster" "controlplane" {
