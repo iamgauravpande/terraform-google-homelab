@@ -47,3 +47,14 @@ module "gkecluster" {
     module.subnets
   ] 
 }
+
+module "gkenodepool" {
+  source = "./modules/gkenodepool"
+  nodepool = var.nodepool
+  depends_on = [
+    module.serviceaccounts,
+    module.vpc,
+    module.subnets,
+    module.gkecluster
+  ] 
+}

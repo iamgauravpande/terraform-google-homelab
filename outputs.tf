@@ -31,3 +31,11 @@ output "clustername" {
 output "clusterversion" {
     value = [ for i in module.gkecluster.clusterversion : i ]
 }
+
+output "nodepoolname" {
+    value = [ for i in module.gkenodepool.nodepoolname : i ]
+}
+
+output "nodepoolversion" {
+    value = [ for i in module.gkenodepool.nodepoolversion : i ]
+}

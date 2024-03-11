@@ -54,8 +54,8 @@ buckets = {
 }
 
 serviceaccount = {
-  "loki-gcs" = {
-    account_id = "loki-gcs"
+  "gcs-sa" = {
+    account_id = "gcs-sa"
     
   }
   "cert-manager-dns01" = {
@@ -64,12 +64,16 @@ serviceaccount = {
   "compute" = {
     account_id = "compute"
   }
+  "gke-sa" = {
+    account_id = "gke-sa"
+  }
+
 }
 
 project = "bitlost"
 bindings = {
   "roles/storage.admin" = [ 
-    "serviceAccount:loki-gcs@bitlost.iam.gserviceaccount.com"
+    "serviceAccount:gcs-sa@bitlost.iam.gserviceaccount.com"
   ]
 
   "roles/dns.admin" = [ 
@@ -79,6 +83,12 @@ bindings = {
   "roles/compute.admin" = [ 
     "serviceAccount:compute@bitlost.iam.gserviceaccount.com" 
   ]
+  "roles/container.admin" = [ 
+    "serviceAccount:gke-sa@bitlost.iam.gserviceaccount.com"
+  ]
+  "roles/iam.serviceAccountUser" = [ 
+    "serviceAccount:gke-sa@bitlost.iam.gserviceaccount.com"
+    ]
 }
 
 serviceaccount_key = [  ]
@@ -155,5 +165,26 @@ gkecluster = {
     stack_type = "IPV4" 
     enable_private_nodes = true
     master_ipv4_cidr_block = "172.16.0.48/28"
+  }
+}
+
+nodepool = {
+  "pool01" = {
+      name = "pool01"
+      cluster = "cluster01"
+      location = "asia-south2-a"
+      node_count = 1
+      max_pods_per_node = 32
+      version = "1.26.10-gke.1101000"
+      node_config-disk_size_gb = 10
+      node_config-disk_type = "pd-ssd"
+      node_config-spot_instance = true
+      node_config-image_type = "UBUNTU_CONTAINERD"
+      node_config-machine_type = "e2-micro"
+      node_config-service_account = "gke-sa@bitlost.iam.gserviceaccount.com"
+      node_config-oauth_scopes = ["cloud-platform"]
+      network_config-create_pod_range = false
+      network_config-enable_private_nodes = true
+      network_config-pod_range = "subnet03-secondary01"
   }
 }
