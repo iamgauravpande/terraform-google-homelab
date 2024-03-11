@@ -2,7 +2,7 @@
 
 -  To create one or more Disk using a public gcp Ubuntu based image : 
 
-`entrypoint.tf` would reference computedisk module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "computedisk" {
@@ -11,7 +11,7 @@ module "computedisk" {
 }
 ```
 
-`main.tf` would contain the code to create a disk resource:
+`main.tf` example:
 
 ```hcl
 resource "google_compute_disk" "disk" {

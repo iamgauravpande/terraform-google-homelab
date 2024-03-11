@@ -2,7 +2,7 @@
 
 -  To create one or more Subnets: 
 
-`entrypoint.tf` would reference subnets module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "subnets" {
@@ -15,7 +15,7 @@ module "subnets" {
 }
 ```
 
-`main.tf` would contain the code to create a new Subnet:
+`main.tf` example:
 
 ```hcl
 resource "google_compute_subnetwork" "subnetwork" {

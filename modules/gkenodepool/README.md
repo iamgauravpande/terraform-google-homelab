@@ -2,7 +2,7 @@
 
 -  To create one or more GKE NodePool : 
 
-`entrypoint.tf` would reference computeinstance module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "gkenodepool" {
@@ -17,7 +17,7 @@ module "gkenodepool" {
 }
 ```
 
-`main.tf` would contain the code to create a GKE Control Plane:
+`main.tf` example:
 
 ```hcl
 resource "google_container_node_pool" "workernodepools" {

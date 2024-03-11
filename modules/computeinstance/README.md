@@ -2,7 +2,7 @@
 
 -  To create one or more VM : 
 
-`entrypoint.tf` would reference computeinstance module under `modules` directory
+`entrypoint.tf` example:
 
 ```hcl
 module "computeinstance" {
@@ -17,7 +17,7 @@ module "computeinstance" {
 }
 ```
 
-`main.tf` would contain the code to create a compute instance resource:
+`main.tf` example:
 
 ```hcl
 resource "google_compute_instance" "instance" {
