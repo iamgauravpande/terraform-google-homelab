@@ -17,13 +17,29 @@ Make sure below points exist before proceeding to use this repo:
 Follow this link [gcp-authenticate] to use one of many methods suggested to authenticate to gcp provider.
 
 
-
 ## Provision Commands :
 
 - `terraform init` to get the plugins/modules
 - `terraform plan` to see the speculative infrastructure plan
 - `terraform apply` to apply the infrastructure build
 - `terraform destroy` to destroy the built infrastructure
+
+## Migrate Terraform State:
+
+`backend.tf` contains the configurations that will help in  migration of local state to a GCS bucket: 
+
+*NOTE:* The GCS bucket should pre-exist before configuring these settings:
+
+- `bucket`: Name of the bucket to store state to.
+- `prefix`: The Folder name inside which the state object will be stored.
+- `credentials`: path/name of the service account file in json format. The Service Account should have storageAdmin Role.
+= `project`: The GCP project name.
+
+
+*Command to use to perform migration is :*
+
+`terraform init -backend-config="bucket=<bucket_name>" -migrate-state`
+
 
 ## How to Use this Module:
 
