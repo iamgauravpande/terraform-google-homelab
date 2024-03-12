@@ -48,6 +48,3 @@ crash.log
 
 # json key's
 keys
-
-# provider creds
-provider.tf
