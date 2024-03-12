@@ -33,7 +33,7 @@ Follow this link [gcp-authenticate] to use one of many methods suggested to auth
 - `bucket`: Name of the bucket to store state to.
 - `prefix`: The Folder name inside which the state object will be stored.
 - `credentials`: path/name of the service account file in json format. The Service Account should have storageAdmin Role.
-= `project`: The GCP project name.
+- `project`: The GCP project name.
 
 
 *Command to use to perform migration is :*
